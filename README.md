@@ -23,5 +23,7 @@ password    : nama dokter
 username    : nama Pasien
 password    : password
 ```
+*password pasien di set pada saat registrasi*
+
 
 *Thank you*
