@@ -86,6 +86,24 @@
                                 <p>Dashboard <span class="right badge badge-success">Dokter</span></p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="jadwalPeriksa.php" class="nav-link">
+                                <i class="fas fa-solid fa-hospital-user nav-icon"></i>
+                                <p>Jadwal Praktek Dokter <span class="right badge badge-success">Dokter</span></p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="periksaPasien.php" class="nav-link">
+                                <i class="fas fa-solid fa-stethoscope nav-icon"></i>
+                                <p>Periksa Pasien <span class="right badge badge-success">Dokter</span></p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="riwayatPasien.php" class="nav-link">
+                                <i class="fas fa-solid fa-book-medical nav-icon"></i>
+                                <p>Riwayat Pasien <span class="right badge badge-success">Dokter</span></p>
+                            </a>
+                        </li>
                     </ul>
                     <?php } else if($_SESSION['akses'] == "pasien"){?>
                     <ul class="nav nav-treeview">
@@ -93,6 +111,12 @@
                             <a href="dashboard_pasien.php" class="nav-link">
                                 <i class="fas fa-solid fa-hospital-user nav-icon"></i>
                                 <p>Dashboard <span class="right badge badge-info">Pasien</span></p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="daftarPoliklinik.php" class="nav-link">
+                                <i class="fas fa-solid fa-stethoscope nav-icon"></i>
+                                <p>Daftar Poli <span class="right badge badge-info">Pasien</span></p>
                             </a>
                         </li>
                     </ul>
