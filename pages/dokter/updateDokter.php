@@ -9,9 +9,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $no_hp = $_POST["no_hp"];
     $poli = $_POST["poli"];
 
-    // Query untuk melakukan update data obat
+    // Query untuk melakukan update data dokter
     $query = "UPDATE dokter SET 
-        nama = '$nama', 
+        nama = '$nama',
         alamat = '$alamat',
         no_hp = '$no_hp',
         id_poli = $poli
