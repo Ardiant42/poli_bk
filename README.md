@@ -17,6 +17,7 @@ password    : admin
 username    : nama dokter
 password    : nama dokter
 ```
+*password dokter dapat diubah pada update profile*
 
 ## Login Pasien
 ```
