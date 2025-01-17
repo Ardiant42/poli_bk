@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2024 at 05:22 PM
+-- Generation Time: Jan 17, 2025 at 01:46 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -45,7 +45,12 @@ INSERT INTO `daftar_poli` (`id`, `id_pasien`, `id_jadwal`, `keluhan`, `no_antria
 (4, 13, 11, 'Gusi berdarah', 1, '0'),
 (5, 10, 8, 'Telinga sakit', 2, '0'),
 (6, 14, 13, 'Mata Merah', 1, '1'),
-(7, 15, 15, 'Batuk, Pilek', 1, '1');
+(7, 15, 15, 'Batuk, Pilek', 1, '1'),
+(8, 16, 14, 'Sariawan', 1, '1'),
+(9, 17, 14, 'batuk, pilek, radang tenggorokan', 2, '1'),
+(10, 17, 17, 'cek kesehatan', 1, '0'),
+(11, 15, 14, 'pusing', 3, '0'),
+(12, 18, 20, 'Batuk, pusing, pilek', 1, '1');
 
 -- --------------------------------------------------------
 
@@ -68,7 +73,17 @@ INSERT INTO `detail_periksa` (`id`, `id_periksa`, `id_obat`) VALUES
 (5, 3, 14),
 (6, 4, 19),
 (7, 5, 11),
-(8, 5, 13);
+(8, 5, 13),
+(9, 6, 13),
+(10, 6, 17),
+(11, 7, 11),
+(12, 7, 13),
+(13, 7, 17),
+(14, 7, 21),
+(15, 8, 11),
+(16, 8, 12),
+(17, 8, 13),
+(18, 8, 21);
 
 -- --------------------------------------------------------
 
@@ -91,10 +106,12 @@ CREATE TABLE `dokter` (
 
 INSERT INTO `dokter` (`id`, `nama`, `password`, `alamat`, `no_hp`, `id_poli`) VALUES
 (12, 'Kusuma', 'eee462bf8b460595e91b5aab19fd61c2', 'Semarang', '085678876543', 10),
-(13, 'Andra', '839ddfea673b23c89c87ca5bfd74ac3c', 'Semarang', '08907524675678', 10),
-(16, 'Novan', '0c646b9d777ee31b005228bdc3d469a1', 'Semarang', '089456543456', 10),
-(19, 'Budi', '00dfc53ee86af02e742515cdcf075ed3', 'Jl. Simpang 5', '089234567', 10),
-(20, 'Ahmad', 'a244bc2be4245c022748235a46dedf15', 'Semarang', '08178646732', 24);
+(13, 'Andra', '839ddfea673b23c89c87ca5bfd74ac3c', 'Semarang', '08907524675678', 21),
+(16, 'Novan', '0c646b9d777ee31b005228bdc3d469a1', 'Semarang', '089456543456', 11),
+(19, 'Budi', '00dfc53ee86af02e742515cdcf075ed3', 'Jl. Simpang 5', '089234567', 24),
+(20, 'Ahmad', 'a244bc2be4245c022748235a46dedf15', 'Semarang', '0882723763713', 24),
+(22, 'Dedi', '06b1674142e7ac88c536d83e6ae7c31c', 'Solo', '0814613475134', 21),
+(24, 'Tono Baru', '827ccb0eea8a706c4c34a16891f84e7b', 'Solo', '088111111111', 24);
 
 -- --------------------------------------------------------
 
@@ -122,11 +139,16 @@ INSERT INTO `jadwal_periksa` (`id`, `id_dokter`, `hari`, `jam_mulai`, `jam_seles
 (9, 13, 'Senin', '13:00:00', '17:00:00', 'Y'),
 (10, 16, 'Senin', '08:00:00', '12:00:00', 'N'),
 (11, 16, 'Selasa', '13:00:00', '17:00:00', 'Y'),
-(12, 19, 'Senin', '08:00:00', '12:30:00', 'Y'),
+(12, 19, 'Senin', '08:00:00', '12:30:00', 'N'),
 (13, 19, 'Senin', '13:00:00', '15:30:00', 'N'),
 (14, 20, 'Senin', '09:00:00', '15:00:00', 'Y'),
 (15, 20, 'Selasa', '09:00:00', '15:00:00', 'N'),
-(16, 20, 'Rabu', '09:00:00', '15:00:00', 'N');
+(16, 20, 'Rabu', '09:00:00', '15:00:00', 'N'),
+(17, 22, 'Senin', '09:00:00', '15:00:00', 'Y'),
+(18, 22, 'Selasa', '09:00:00', '15:00:00', 'N'),
+(19, 19, 'Kamis', '09:00:00', '16:00:00', 'Y'),
+(20, 24, 'Jumat', '09:00:00', '16:00:00', 'Y'),
+(21, 24, 'Sabtu', '09:00:00', '16:00:00', 'N');
 
 -- --------------------------------------------------------
 
@@ -147,13 +169,14 @@ CREATE TABLE `obat` (
 
 INSERT INTO `obat` (`id`, `nama_obat`, `kemasan`, `harga`) VALUES
 (11, 'Obat Batuk', 'Tablet', 18000),
-(12, 'Obat Pusing', 'botol', 32000),
+(12, 'Obat Pusing', 'Botol', 32000),
 (13, 'Vitamin C', 'Botol Pil', 10000),
 (14, 'Vitamin B Complex', 'Botol Pil', 10000),
 (17, 'Obat Radang', 'Tablet', 23000),
 (18, 'Obat Diare', 'Tablet', 12000),
 (19, 'Vitamin A', 'Tablet', 8000),
-(20, 'Panadol', 'Tablet', 15000);
+(20, 'Panadol', 'Tablet', 15000),
+(21, 'Obat Pilek', 'Tablet', 12000);
 
 -- --------------------------------------------------------
 
@@ -180,7 +203,9 @@ INSERT INTO `pasien` (`id`, `nama`, `password`, `alamat`, `no_ktp`, `no_hp`, `no
 (13, 'Budi', '827ccb0eea8a706c4c34a16891f84e7b', 'Semarang', '0987654', '98765', '202401-002'),
 (14, 'Dian', '827ccb0eea8a706c4c34a16891f84e7b', 'Semarang', '9876543', '0878', '202401-003'),
 (15, 'Luluk', '11fc2e08327227d802532d48ee16960b', 'Semarang', '3374143005030002', '08819747806', '202412-004'),
-(16, 'Ardi', 'beec4e44a9c4fb14432d957892eb7be2', 'Semarang', '124135325', '134235242', '202412-005');
+(16, 'Ardi', 'beec4e44a9c4fb14432d957892eb7be2', 'Semarang', '124135325', '134235242', '202412-005'),
+(17, 'Ryan', 'beec4e44a9c4fb14432d957892eb7be2', 'Semarang', '1219476417867323', '08126464134', '202412-006'),
+(18, 'Anto', '202cb962ac59075b964b07152d234b70', 'Semarang Barat', '1471673648732193', '0173461736434', '202412-007');
 
 -- --------------------------------------------------------
 
@@ -203,7 +228,10 @@ CREATE TABLE `periksa` (
 INSERT INTO `periksa` (`id`, `id_daftar_poli`, `tgl_periksa`, `catatan`, `biaya_periksa`) VALUES
 (3, 3, '2024-01-08 01:07:00', 'silahkan tidur cukup', 170000),
 (4, 6, '2024-01-08 14:15:00', 'sudah sedikit membaik, jangan lupa habiskan obatnya', 158000),
-(5, 7, '2024-12-02 09:40:00', 'Kurangi minum es, banyak minum air putih', 178000);
+(5, 7, '2024-12-02 09:40:00', 'Kurangi minum es, banyak minum air putih', 178000),
+(6, 8, '2024-12-23 10:00:00', 'Banyak banyak minum air putih, dan makan buah', 183000),
+(7, 9, '2024-12-23 10:30:00', 'Kurangin minum es, banyakin air putih', 213000),
+(8, 12, '2024-12-26 14:56:00', 'Istirahat yang cukup, jangan terlalu banyak minum es', 222000);
 
 -- --------------------------------------------------------
 
@@ -296,49 +324,49 @@ ALTER TABLE `poli`
 -- AUTO_INCREMENT for table `daftar_poli`
 --
 ALTER TABLE `daftar_poli`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `detail_periksa`
 --
 ALTER TABLE `detail_periksa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `dokter`
 --
 ALTER TABLE `dokter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `jadwal_periksa`
 --
 ALTER TABLE `jadwal_periksa`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `obat`
 --
 ALTER TABLE `obat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `pasien`
 --
 ALTER TABLE `pasien`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `periksa`
 --
 ALTER TABLE `periksa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `poli`
 --
 ALTER TABLE `poli`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- Constraints for dumped tables
